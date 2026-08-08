@@ -2,7 +2,7 @@
 define( 'DB_NAME', 'defaultdb' );
 define( 'DB_USER', 'avnadmin' );
 define( 'DB_PASSWORD', getenv('WORDPRESS_DB_PASSWORD') );
-define( 'DB_HOST', 'mysql-2db61bda-wpapp2026.aivencloud.com:15360' );
+define( 'DB_HOST', 'mysql-2db61bda-wpapp2026.c.aivencloud.com:15360' );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 
@@ -19,8 +19,7 @@ define('NONCE_SALT',       'put your unique phrase here');
 
 $table_prefix = 'wp_';
 
-define( 'WP_DEBUG', true );
-define( 'WP_DEBUG_DISPLAY', true );
+define( 'WP_DEBUG', false );
 
 if ( ! defined( 'ABSPATH' ) ) {
     define( 'ABSPATH', __DIR__ . '/' );
