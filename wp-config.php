@@ -6,7 +6,7 @@ define( 'DB_HOST', 'mysql-2db61bda-wpapp2026.aivencloud.com:15360' );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 
-define( 'MYSQL_CLIENT_FLAGS', MYSQL_CLIENT_SSL );
+define( 'MYSQL_CLIENT_FLAGS', 32 );
 
 define('AUTH_KEY',         'put your unique phrase here');
 define('SECURE_AUTH_KEY',  'put your unique phrase here');
