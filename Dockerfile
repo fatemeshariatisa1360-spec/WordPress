@@ -6,15 +6,15 @@ RUN sed -i 's/80/8080/g' /etc/apache2/ports.conf /etc/apache2/sites-available/00
 # فعال‌سازی ماژول rewrite
 RUN a2enmod rewrite
 
-# ساخت خودکار فایل wp-config.php با تمام تنظیمات امنیتی، پورت و SSL دیتابیس Aiven
+# ساخت خودکار فایل wp-config.php بدون خطای ثابت‌ها
 RUN echo '<?php \n\
 define( "DB_NAME", "defaultdb" ); \n\
 define( "DB_USER", "avnadmin" ); \n\
-define( "DB_PASSWORD", getenv("AVNS_sDpYzq1awZOW8Pmz2A3") ); \n\
+define( "DB_PASSWORD", getenv("WORDPRESS_DB_PASSWORD") ); \n\
 define( "DB_HOST", "mysql-2db61bda-wpapp2026.aivencloud.com:15360" ); \n\
 define( "DB_CHARSET", "utf8" ); \n\
 define( "DB_COLLATE", "" ); \n\
-define( "MYSQL_CLIENT_FLAGS", MYSQL_CLIENT_SSL ); \n\
+define( "MYSQL_CLIENT_FLAGS", 32 ); \n\
 define("AUTH_KEY", "put your unique phrase here"); \n\
 define("SECURE_AUTH_KEY", "put your unique phrase here"); \n\
 define("LOGGED_IN_KEY", "put your unique phrase here"); \n\
