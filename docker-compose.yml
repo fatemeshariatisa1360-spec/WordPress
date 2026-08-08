@@ -3,11 +3,10 @@ version: '3.8'
 services:
   db:
     image: mysql:8.0
-    container_name: wp_db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: my_secure_password_123
-      MYSQL_DATABASE: wordpress_db
+      MYSQL_ROOT_PASSWORD: rootpassword123
+      MYSQL_DATABASE: wordpress
       MYSQL_USER: wp_user
       MYSQL_PASSWORD: wp_password
     volumes:
@@ -15,13 +14,12 @@ services:
 
   wordpress:
     image: wordpress:latest
-    container_name: wp_site
     restart: always
     ports:
       - "80:80"
     environment:
       WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_NAME: wordpress_db
+      WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: wp_user
       WORDPRESS_DB_PASSWORD: wp_password
     depends_on:
