@@ -10,7 +10,7 @@ RUN a2enmod rewrite
 RUN echo '<?php \n\
 define( "DB_NAME", "defaultdb" ); \n\
 define( "DB_USER", "avnadmin" ); \n\
-define( "DB_PASSWORD", getenv("WORDPRESS_DB_PASSWORD") ); \n\
+define( "DB_PASSWORD", getenv("AVNS_sDpYzq1awZOW8Pmz2A3") ); \n\
 define( "DB_HOST", "mysql-2db61bda-wpapp2026.aivencloud.com:15360" ); \n\
 define( "DB_CHARSET", "utf8" ); \n\
 define( "DB_COLLATE", "" ); \n\
