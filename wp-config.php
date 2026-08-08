@@ -21,6 +21,11 @@ $table_prefix = 'wp_';
 
 define( 'WP_DEBUG', false );
 
+// حل مشکل حلقه ریدایرکت HTTPS در پروداکشن Render
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+}
+
 if ( ! defined( 'ABSPATH' ) ) {
     define( 'ABSPATH', __DIR__ . '/' );
 }
